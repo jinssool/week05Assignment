@@ -3,7 +3,7 @@ package com.example.week05assignment.model
 import androidx.compose.runtime.saveable.listSaver
 
 data class ImageData(
-    val imageResId : String,
+    val imageResId : Int,
     val imagename : String,
     var isSelected : Boolean = false,
 ) {
@@ -14,7 +14,7 @@ data class ImageData(
             },
             restore = {list ->
                 ImageData(
-                    imageResId = list[0] as String,
+                    imageResId = list[0] as Int,
                     imagename = list[1] as String,
                     isSelected = list[2] as Boolean,
                     )

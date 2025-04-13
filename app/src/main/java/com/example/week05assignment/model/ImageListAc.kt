@@ -19,7 +19,7 @@ object ImageListAc {
         restore = { flatList ->
             flatList.chunked(4).map { chunk ->
                 ImageData(
-                    imageResId = chunk[0] as String,
+                    imageResId = chunk[0] as Int,
                     imagename = chunk[1] as String,
                     isSelected = chunk[2] as Boolean,
                 )
