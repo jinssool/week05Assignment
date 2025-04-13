@@ -2,7 +2,6 @@ package com.example.week05assignment.uicomponents
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -17,7 +16,9 @@ fun DressRoom(clothes : List<ImageData>, modifier: Modifier = Modifier) {
         Image(
             painter = painterResource(id = R.drawable.body),
             contentDescription = "body",
-            modifier = Modifier.align(Alignment.Center).fillMaxWidth(0.7f)
+            modifier = Modifier
+                .align(Alignment.Center)
+                .fillMaxWidth(0.5f)
         )
         clothes
             .filter { it.isSelected }
@@ -25,7 +26,9 @@ fun DressRoom(clothes : List<ImageData>, modifier: Modifier = Modifier) {
             Image(
                 painterResource(id = it.imageResId.toInt()),
                 contentDescription = it.imagename,
-                modifier = Modifier.align(Alignment.Center).fillMaxWidth(0.7f)
+                modifier = Modifier
+                    .align(Alignment.Center)
+                    .fillMaxWidth(0.5f)
             )
         }
     }
