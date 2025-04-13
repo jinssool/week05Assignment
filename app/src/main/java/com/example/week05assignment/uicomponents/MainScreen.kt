@@ -5,20 +5,23 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.week05assignment.model.ImageData
-import com.example.week05assignment.model.ImageListAc
 import com.example.week05assignment.model.ImageListFactory
 
 @Composable
 fun MainScreen(modifier: Modifier = Modifier) {
-    var clothes by remember { mutableStateOf(ImageListFactory.makeImageList()) }
+    var clothes by rememberSaveable(stateSaver = ImageListAc.saver) {
+        mutableStateOf(ImageListFactory.makeImageList())
+    }
 
     val orientation = LocalConfiguration.current.orientation
 

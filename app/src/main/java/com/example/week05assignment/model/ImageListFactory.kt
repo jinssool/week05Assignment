@@ -4,11 +4,7 @@ import com.example.week05assignment.R
 
 object ImageListFactory {
     fun makeImageList() = mutableListOf(
-        ImageData(
-            imageResId = R.drawable.body.toString(),
-            imagename = "body",
-            isSelected = true
-        ),
+
         ImageData(
             imageResId = R.drawable.arms.toString(),
             imagename = "arms",
