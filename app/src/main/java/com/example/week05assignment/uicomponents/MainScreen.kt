@@ -29,14 +29,16 @@ fun MainScreen(modifier: Modifier = Modifier) {
 
     if (orientation == Configuration.ORIENTATION_PORTRAIT) {
         Column(modifier = Modifier.fillMaxSize()) {
-            DressRoom(clothes = clothes)
+            DressRoom(clothes = clothes, modifier = Modifier.weight(1f))
             CheckBoxRoom(clothes = clothes, onToggle = toggle, modifier = Modifier.weight(1f))
         }
+
     } else {
         Row(modifier = Modifier.fillMaxSize()) {
-            DressRoom(clothes = clothes)
-            CheckBoxRoom(clothes = clothes, onToggle = toggle)
+            DressRoom(clothes = clothes, modifier = Modifier.weight(1f))
+            CheckBoxRoom(clothes = clothes, onToggle = toggle, modifier = Modifier.weight(1f))
         }
+
 
     }
 }

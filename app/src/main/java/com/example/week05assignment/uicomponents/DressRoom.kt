@@ -10,7 +10,7 @@ import androidx.compose.ui.res.painterResource
 import com.example.week05assignment.model.ImageData
 
 @Composable
-fun DressRoom(clothes : List<ImageData>) {
+fun DressRoom(clothes : List<ImageData>, modifier: Modifier) {
     Box(modifier = Modifier.fillMaxSize()){
         clothes
             .filter { it.isSelected }
